@@ -204,3 +204,19 @@
 | Name | Link | License | Copyright |
 | ------- | ------- | ------- | ------- |
 | OpenCV | https://github.com/opencv/opencv | Apache-2.0 License | Copyright (c) OpenCV team |
+
+## Middlebury Stereo 2014 Dataset License
+
+This repository includes images and disparity maps from
+the Middlebury Stereo 2014 Dataset (© Middlebury Vision Lab).
+
+You are free to use and distribute these files provided that you
+cite the following paper:
+
+D. Scharstein, H. Hirschmüller, Y. Kitajima, G. Krathwohl, N. Nesic,
+X. Wang, and P. Westling.
+“High-resolution stereo datasets with subpixel-accurate ground truth.”
+In German Conference on Pattern Recognition (GCPR), 2014.
+
+See also:
+https://vision.middlebury.edu/stereo/data/ :contentReference[oaicite:1]{index=1}
