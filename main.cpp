@@ -1,8 +1,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2025 Sensui Yagi. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-#include "retinify/retinify.hpp"
-
+#include <retinify/retinify.hpp>
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -76,8 +75,8 @@ int main(int argc, char **argv)
     rightImage.convertTo(rightImage, CV_32FC3);
     cv::Mat disparity = cv::Mat{leftImage.size(), CV_32FC1};
 
-    auto statusForward = pipeline.Forward(leftImage.ptr(), leftImage.step[0], rightImage.ptr(), rightImage.step[0], disparity.ptr(), disparity.step[0]);
-    if (!statusForward.IsOK())
+    auto statusRun = pipeline.Run(leftImage.ptr(), leftImage.step[0], rightImage.ptr(), rightImage.step[0], disparity.ptr(), disparity.step[0]);
+    if (!statusRun.IsOK())
     {
         retinify::LogError("Failed to process the pipeline.");
         return 1;
