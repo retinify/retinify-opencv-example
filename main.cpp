@@ -52,8 +52,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    cv::Mat leftImage = cv::imread(left_path);
-    cv::Mat rightImage = cv::imread(right_path);
+    cv::Mat leftImage = cv::imread(left_path, cv::IMREAD_GRAYSCALE);
+    cv::Mat rightImage = cv::imread(right_path, cv::IMREAD_GRAYSCALE);
     if (leftImage.empty() || rightImage.empty())
     {
         retinify::LogError("Failed to load input images.");
@@ -71,8 +71,8 @@ int main(int argc, char **argv)
     cv::resize(leftImage, leftImage, cv::Size(1280, 720));
     cv::resize(rightImage, rightImage, cv::Size(1280, 720));
 
-    leftImage.convertTo(leftImage, CV_32FC3);
-    rightImage.convertTo(rightImage, CV_32FC3);
+    leftImage.convertTo(leftImage, CV_32FC1);
+    rightImage.convertTo(rightImage, CV_32FC1);
     cv::Mat disparity = cv::Mat{leftImage.size(), CV_32FC1};
 
     auto statusRun = pipeline.Run(leftImage.ptr(), leftImage.step[0], rightImage.ptr(), rightImage.step[0], disparity.ptr(), disparity.step[0]);
