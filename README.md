@@ -2,13 +2,13 @@
 This repository provides an example of how to integrate retinify with OpenCV image data processing.  
 The code contents are explained in the [Tutorials](https://retinify.github.io/retinify-documentation/docs/tutorials.html) in retinify-documentation.
 
-## 1. Install retinify
-For instructions on how to install retinify, please see [Installation](https://retinify.github.io/retinify-documentation/docs/installation.html) in retinify-documentation.
-
-## 2. Install opencv
+## 1. Install opencv
 ```
 sudo apt install libopencv-dev
 ```
+
+## 2. Install retinify
+For instructions on how to install retinify, please see [Installation](https://retinify.github.io/retinify-documentation/docs/installation.html) in retinify-documentation.
 
 ## 3. Clone this repository
 ```
