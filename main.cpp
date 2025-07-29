@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     std::string left_path = argv[1];
     std::string right_path = argv[2];
 
-    retinify::tools::LRConsistencyPipeline pipeline;
+    retinify::tools::StereoMatchingPipeline pipeline;
 
     auto statusInitialize = pipeline.Initialize();
     if (!statusInitialize.IsOK())
