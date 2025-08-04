@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     cv::Mat disparity;
 
-    auto statusRun = pipeline.Run(leftImage, rightImage, disparity, 5.0F);
+    auto statusRun = pipeline.RunWithLeftRightConsistencyCheck(leftImage, rightImage, disparity, 5.0F);
     if (!statusRun.IsOK())
     {
         retinify::LogError("Failed to process the pipeline.");
