@@ -8,7 +8,7 @@ sudo apt install libopencv-dev
 ```
 
 ## 2. Install retinify
-For instructions on how to install retinify, please see [Installation](https://retinify.github.io/retinify-documentation/docs/installation.html) in retinify-documentation.
+For instructions on how to install retinify, please see [Installation](https://retinify.github.io/retinify/installation.html) in retinify-documentation.
 
 ## 3. Clone this repository
 ```
