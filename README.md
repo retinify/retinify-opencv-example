@@ -29,3 +29,6 @@ Please run the following command using the paths to your stereo images located i
 ```
 ./retinify-opencv-example <left_image_path> <right_image_path>
 ```
+
+## 5. Output
+![output](./img/disparity.png)
