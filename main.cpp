@@ -18,13 +18,6 @@ int main(int argc, char **argv)
 
     retinify::tools::StereoMatchingPipeline pipeline;
 
-    auto statusInitialize = pipeline.Initialize();
-    if (!statusInitialize.IsOK())
-    {
-        retinify::LogError("Failed to initialize the pipeline.");
-        return 1;
-    }
-
     cv::Mat leftImage = cv::imread(left_path);
     cv::Mat rightImage = cv::imread(right_path);
     if (leftImage.empty() || rightImage.empty())
@@ -34,6 +27,13 @@ int main(int argc, char **argv)
     }
 
     cv::Mat disparity;
+
+    auto statusInitialize = pipeline.Initialize(leftImage.rows, leftImage.cols);
+    if (!statusInitialize.IsOK())
+    {
+        retinify::LogError("Failed to initialize the pipeline.");
+        return 1;
+    }
 
     auto statusRun = pipeline.RunWithLeftRightConsistencyCheck(leftImage, rightImage, disparity, 5.0F);
     if (!statusRun.IsOK())
