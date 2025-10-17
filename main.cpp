@@ -36,10 +36,17 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    auto statusRun = pipeline.Run(leftImage.ptr<uint8_t>(), leftImage.step[0], rightImage.ptr<uint8_t>(), rightImage.step[0], disparity.ptr<float>(), disparity.step[0]);
-    if (!statusRun.IsOK())
+    auto statusExecute = pipeline.Execute(leftImage.ptr<uint8_t>(), leftImage.step[0], rightImage.ptr<uint8_t>(), rightImage.step[0]);
+    if (!statusExecute.IsOK())
     {
-        retinify::LogError("Failed to run the pipeline.");
+        retinify::LogError("Failed to execute the pipeline.");
+        return 1;
+    }
+
+    auto statusRetrieve = pipeline.RetrieveDisparity(disparity.ptr<float>(), disparity.step[0]);
+    if (!statusRetrieve.IsOK())
+    {
+        retinify::LogError("Failed to retrieve the disparity map.");
         return 1;
     }
 
